@@ -1,0 +1,39 @@
+package Prova.prova;
+
+import java.util.ArrayList;
+
+public class Diretores {
+	
+	private String nome="";
+	private int idade;
+	
+	
+	public Diretores(String nome, int idade) {
+		this.nome = nome;
+		this.idade = idade;
+	}
+	
+	public String getNome() {
+		return this.nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public int getIdade() {
+		return this.idade;
+	}
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+	
+//	public void listaDiretores(Diretores diretores) {
+//		
+//		ArrayList diretor = new ArrayList();
+//		diretor.add(diretores);
+//		
+//	}
+	
+	
+	
+}
+

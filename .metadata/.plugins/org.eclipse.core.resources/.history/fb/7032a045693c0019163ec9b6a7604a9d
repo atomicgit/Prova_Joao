@@ -1,0 +1,51 @@
+package Prova.prova;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import Componentes.PesquisaGoogle;
+import Componentes.Start;
+
+/**
+ * Hello world!
+ *
+ */
+public class Run
+{	
+		
+	public static void main( String[] args ) throws Exception{
+	    	
+    	
+    	
+//    	int i = 0;
+//    	while (i < diretores.size()) {
+//			System.out.println("Diretor "+Integer.toString(i+1)+": "+diretores.get(i).split(";")[0]+" || Idade : "+diretores.get(i).split(";")[1]);	
+//			i++;
+//    	}
+    	
+//    	System.out.println(diretores);
+//    	System.out.println(filmes);
+    	
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    	
+//    	System.setProperty("Nome_autor", Vet_diretores);
+    	
+    	
+    	
+    	
+    	System.setProperty("webdriver.chrome.driver", "C:\\Proton\\ProtonClient\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		try {
+    		Start.run(driver);
+			PesquisaGoogle.run(driver);
+		}catch(Exception e) {
+			
+		}
+    	
+    }
+}

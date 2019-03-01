@@ -1,0 +1,10 @@
+package Prova.prova;
+
+public class Pessoa {
+	
+	String nome="";
+	int idade=;
+	
+	
+
+}

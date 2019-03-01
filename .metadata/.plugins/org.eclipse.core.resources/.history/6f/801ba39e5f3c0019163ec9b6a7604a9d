@@ -1,0 +1,79 @@
+package Prova.prova;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import Componentes.PesquisaGoogle;
+import Componentes.Start;
+
+/**
+ * Hello world!
+ *
+ */
+public class Run
+{	
+		
+	public static void main( String[] args ) throws Exception{
+	    	
+    	String nome="";
+    	int idade;
+    	String filme = "";
+    	int ano;
+    	String cad="1";
+    	
+    	ArrayList<Diretores> diretorList = new ArrayList<Diretores>();
+    	ArrayList<Filmes> filmesList = new ArrayList<Filmes>();
+    	
+    	while(cad.equals("1")) {
+    		
+	    	nome = JOptionPane.showInputDialog(null,"Digite seu nome do diretor do filme: ");
+	    	String S_idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
+	    	idade = Integer.parseInt(S_idade);
+	    	filme = JOptionPane.showInputDialog(null,"Digite o nome do filme:");
+	    	String S_ano = JOptionPane.showInputDialog(null,"Digite o ano de lançamento");
+	    	ano = Integer.parseInt(S_ano);
+	    	
+	    	Diretores diretor = new Diretores(nome, idade);
+	    	diretorList.add(diretor);
+	    	
+	    	Filmes filmes = new Filmes(filme,ano);
+	    	filmesList.add(filmes);
+	    	
+	    	cad = JOptionPane.showInputDialog(null,"Deseja cadastrar outro filme digite 1 se não digite 2");
+    	}
+    	
+    	System.out.println(diretorList.get(0).getNome());
+    	System.out.println(filmesList.get(0).getFilme());
+    	
+//    	int i = 0;
+//    	while (i < diretores.size()) {
+//			System.out.println("Diretor "+Integer.toString(i+1)+": "+diretores.get(i).split(";")[0]+" || Idade : "+diretores.get(i).split(";")[1]);	
+//			i++;
+//    	}
+    	
+//    	System.out.println(diretores);
+//    	System.out.println(filmes);
+    	
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    	
+//    	System.setProperty("Nome_autor", Vet_diretores);
+    	
+    	
+    	
+    	
+    	System.setProperty("webdriver.chrome.driver", "C:\\Proton\\ProtonClient\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		try {
+    		Start.run(driver);
+			PesquisaGoogle.run(driver);
+		}catch(Exception e) {
+			
+		}
+    	
+    }
+}

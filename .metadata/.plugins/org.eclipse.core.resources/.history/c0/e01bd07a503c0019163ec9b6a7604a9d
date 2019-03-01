@@ -1,0 +1,17 @@
+package Prova.prova;
+
+import java.util.ArrayList;
+
+public class Locadora {
+	
+	private ArrayList<String> Diretores = new ArrayList();
+	private ArrayList<String> filmes = new ArrayList();
+	
+		
+	
+	public String getDiretores(int index){
+	    return Diretores.get(index);
+	}
+
+	
+}

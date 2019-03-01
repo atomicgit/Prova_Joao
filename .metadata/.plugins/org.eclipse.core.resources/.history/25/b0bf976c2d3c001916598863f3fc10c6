@@ -1,0 +1,36 @@
+package Prova.prova;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	String nome="";
+    	int idade;
+    	String filme = "";
+    	int ano;
+    	
+    	
+    	ArrayList<String> pessoas = new ArrayList();
+    	
+    	nome = JOptionPane.showInputDialog(null,"Digite seu nome do diretor do filme: ");
+    	String S_idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
+    	idade = Integer.parseInt(S_idade);
+    	filme = JOptionPane.showInputDialog(null,"Digite o nome do filme:");
+    	String S_ano = JOptionPane.showInputDialog(null,"Digite o ano de lançamento");
+    	ano = Integer.parseInt(S_ano);
+    	
+    	
+    	pessoas.add("Nome do diretor do filme: "+nome+". sua idade é "+idade+" dirigiu o filme "+filme+" cujo foi lançado no ano de "+ano);
+    	
+    	System.out.println(pessoas);
+    	
+    }
+}

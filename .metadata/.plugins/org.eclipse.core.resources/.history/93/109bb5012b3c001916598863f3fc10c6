@@ -1,0 +1,21 @@
+package Prova.prova;
+
+import java.util.ArrayList;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	String nome="";
+    	int idade =0;
+    	
+    	ArrayList<String> pessoas = new ArrayList();
+    	
+    	
+    	
+    }
+}

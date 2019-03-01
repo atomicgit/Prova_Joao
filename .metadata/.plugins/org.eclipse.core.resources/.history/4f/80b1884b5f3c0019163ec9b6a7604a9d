@@ -1,0 +1,29 @@
+package Componentes;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class PesquisaGoogle {
+	public static void run(WebDriver driver) throws Exception{
+		
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		
+		driver.get("http://www.google.com");		
+		driver.manage().window().maximize();
+		
+		
+		driver.findElement(By.xpath("//input[@class='gLFyf gsfi']")).click();
+		driver.findElement(By.xpath("//input[@class='gLFyf gsfi']")).sendKeys("Bastardos inglórios"+Keys.chord(Keys.ENTER));
+		
+		
+	}
+}

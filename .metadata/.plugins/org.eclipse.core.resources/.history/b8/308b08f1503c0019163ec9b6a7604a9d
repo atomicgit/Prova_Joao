@@ -1,0 +1,15 @@
+package Prova.prova;
+
+import java.util.ArrayList;
+
+public class Locadora {
+	
+	private String nome="";
+	private int idade;
+	private String filme = "";
+	private int ano;
+	
+	
+
+	
+}

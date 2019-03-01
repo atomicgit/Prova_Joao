@@ -1,0 +1,20 @@
+package Prova.prova;
+
+import java.util.ArrayList;
+
+public class Locadora {
+	
+	private ArrayList<String> Diretores = new ArrayList();
+	private ArrayList<String> filmes = new ArrayList();
+	
+	
+	public void setDiretores(String diretor,int idade) {
+		this.Diretores = diretor;
+	}
+
+	public String getDiretores(int index){
+	    return Diretores.get(index);
+	}
+
+	
+}

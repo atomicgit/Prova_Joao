@@ -1,0 +1,27 @@
+package Prova.prova;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	String nome="";
+    	int idade =0;
+    	
+    	ArrayList<String> pessoas = new ArrayList();
+    	
+    	nome = JOptionPane.showInputDialog(null,"Digite seu nome: ");
+    	
+    	String idadeP = JOptionPane.showInputDialog(null,"Digite sua idade: ");
+    	idade = Integer.parseInt(idadeP);
+    	
+    	
+    }
+}

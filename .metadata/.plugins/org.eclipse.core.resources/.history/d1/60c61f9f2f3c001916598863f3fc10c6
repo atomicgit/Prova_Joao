@@ -1,0 +1,43 @@
+package Prova.prova;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	String nome="";
+    	int idade;
+    	String filme = "";
+    	int ano;
+    	String cad="1";
+    	
+    	ArrayList<String> pessoas = new ArrayList();
+    	
+    	while(cad.equals("1")) {
+	    	nome = JOptionPane.showInputDialog(null,"Digite seu nome do diretor do filme: ");
+	    	String S_idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
+	    	idade = Integer.parseInt(S_idade);
+	    	filme = JOptionPane.showInputDialog(null,"Digite o nome do filme:");
+	    	String S_ano = JOptionPane.showInputDialog(null,"Digite o ano de lançamento");
+	    	ano = Integer.parseInt(S_ano);
+	    	
+	    	pessoas.add("Nome do diretor do filme: "+nome+"\nIdade do diretor do filme: "+idade+
+	    			"\nNome do filme: "+filme+" - lançado no ano de "+ano);
+	    	
+	    	cad = JOptionPane.showInputDialog(null,"Deseja cadastrar outro filme digite 1 se não digite 2");
+    	}
+    	
+    	System.out.println(pessoas);
+    	
+    	
+    	
+    	
+    }
+}

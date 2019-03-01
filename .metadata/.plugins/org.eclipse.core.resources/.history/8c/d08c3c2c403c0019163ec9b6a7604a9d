@@ -1,0 +1,48 @@
+package Prova.prova;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class PesquisaGoogle {
+	public static void run(WebDriver driver) throws Exception{
+		
+		WebDriverWait wait = new WebDriverWait(driver, 40);
+		
+		driver.get("http://www.google.com");		
+		driver.manage().window().maximize();
+		
+		
+//		driver.findElement(By.xpath("//a[@class='linkButtonSigninHeader']")).click();
+//		wait.until(ExpectedConditions.elementToBeClickable(By.id("i0116")));
+//		driver.findElement(By.id("i0116")).sendKeys(sLogin+Keys.chord(Keys.ENTER));
+//		wait.until(ExpectedConditions.elementToBeClickable(By.id("i0118")));
+//		driver.findElement(By.id("i0118")).sendKeys(sPassword+Keys.chord(Keys.ENTER));
+//		
+//		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@class='_2M9l3G4PiX85HdT9FVcTVY']")));
+//		try {
+//            Robot robot = new Robot();
+//            robot.keyPress(KeyEvent.VK_CONTROL);
+//            robot.keyPress(KeyEvent.VK_T);
+//            robot.keyRelease(KeyEvent.VK_CONTROL);
+//            robot.keyRelease(KeyEvent.VK_T);
+//        } catch (AWTException ex) {
+//            throw new WebDriverException("Erro ao digitar CTRL + T", ex);
+//        }
+//		
+//		ArrayList<String> tabs = new ArrayList<String> (driver.getWindowHandles());
+//		driver.switchTo().window(tabs.get(1));
+//		
+//		driver.get("https://web.whatsapp.com/");
+		
+		
+	}
+}

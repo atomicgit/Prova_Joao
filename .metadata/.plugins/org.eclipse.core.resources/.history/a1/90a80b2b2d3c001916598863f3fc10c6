@@ -1,0 +1,20 @@
+package Prova.prova;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+public class Pessoa {
+	
+	String nome="";
+	int idade =0;
+	
+	ArrayList<String> pessoas = new ArrayList();
+	
+	
+	String idadeP = JOptionPane.showInputDialog(null,"Entre com o numero:");
+	
+    idade = Integer.parseInt(idadeP);
+	
+
+}

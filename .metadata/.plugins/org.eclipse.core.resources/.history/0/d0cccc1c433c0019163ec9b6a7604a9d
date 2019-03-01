@@ -1,0 +1,57 @@
+package Prova.prova;
+
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args ) throws Exception
+    {
+    	String nome="";
+    	String idade;
+    	String filme = "";
+    	int ano;
+    	String cad="1";
+    	
+    	ArrayList<String> diretores = new ArrayList();
+    	ArrayList<String> filmes = new ArrayList();
+    	
+    	while(cad.equals("1")) {
+	    	nome = JOptionPane.showInputDialog(null,"Digite seu nome do diretor do filme: ");
+	    	idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
+	    	filme = JOptionPane.showInputDialog(null,"Digite o nome do filme:");
+	    	String S_ano = JOptionPane.showInputDialog(null,"Digite o ano de lançamento");
+	    	ano = Integer.parseInt(S_ano);
+	    	
+	    	diretores.add(nome+" "+idade);
+	    	filmes.add(filme+" "+ano);
+	    	cad = JOptionPane.showInputDialog(null,"Deseja cadastrar outro filme digite 1 se não digite 2");
+    	}
+    	System.out.println(diretores);
+    	System.out.println(filmes);
+    	
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    	
+    	String[] S_diretores = diretores.toString().split(" ");
+//    	System.setProperty("Num_Requisicao", iNumRequisicao);
+    	System.out.println(S_diretores);
+    	
+    	
+    	System.setProperty("webdriver.chrome.driver", "C:\\Proton\\ProtonClient\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+//		try {
+//			PesquisaGoogle.run(driver);
+//		}catch(Exception e) {
+//			
+//		}
+    	
+    }
+}
