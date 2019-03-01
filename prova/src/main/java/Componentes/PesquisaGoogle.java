@@ -35,7 +35,7 @@ public class PesquisaGoogle {
     	
     	while(cad.equals("1")) {
     		
-	    	nome = JOptionPane.showInputDialog(null,"Digite seu nome do diretor do filme: ");
+	    	nome = JOptionPane.showInputDialog(null,"Digite o nome do diretor do filme: ");
 	    	String S_idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
 	    	idade = Integer.parseInt(S_idade);
 	    	filme = JOptionPane.showInputDialog(null,"Digite o nome do filme:");
@@ -51,8 +51,7 @@ public class PesquisaGoogle {
 	    	cad = JOptionPane.showInputDialog(null,"Deseja cadastrar outro filme digite 1 se não digite 2");
     	}
     	
-    	System.out.println(diretorList.get(0).getNome());
-    	System.out.println(filmesList.get(0).getFilme());
+
 				
 		//.length()
 		for(int i=0; i<diretorList.size(); i++) {
@@ -64,7 +63,7 @@ public class PesquisaGoogle {
 			driver.findElement(By.xpath("//input[@class='gLFyf gsfi']")).sendKeys(nome_diretor+" "+nome_filmes+Keys.chord(Keys.ENTER));
 			
 			resultados = driver.findElement(By.xpath("//div[@id='resultStats']")).getText();
-			
+			System.out.println(filmesList.get(0).getFilme());
 			System.out.println(resultados);              
 			driver.findElement(By.xpath("//input[@class='gLFyf gsfi']")).clear();
 			
