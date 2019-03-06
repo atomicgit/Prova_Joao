@@ -1,14 +1,12 @@
 package Prova.prova;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
-import javax.swing.JOptionPane;
-
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import Componentes.Finish;
 import Componentes.PesquisaGoogle;
 import Componentes.Start;
 
@@ -18,7 +16,7 @@ import Componentes.Start;
  */
 public class Run
 {	
-	@Test
+
 	public static void main( String[] args ) throws Exception{
 
     	System.setProperty("webdriver.chrome.driver", "C:\\Proton\\ProtonClient\\Drivers\\chromedriver.exe");
@@ -27,6 +25,7 @@ public class Run
 		try {
     		Start.run(driver);
 			PesquisaGoogle.run(driver);
+			Finish.run(driver);
 		}catch(Exception e) {
 			
 		}

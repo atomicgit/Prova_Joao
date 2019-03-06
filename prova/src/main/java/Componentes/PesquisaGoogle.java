@@ -19,7 +19,7 @@ import Prova.prova.Diretores;
 import Prova.prova.Filmes;
 
 public class PesquisaGoogle {
-	@Test
+	
 	public static void run(WebDriver driver) throws Exception{
 		
 		String nome="";
@@ -44,9 +44,8 @@ public class PesquisaGoogle {
 	    	String S_idade = "";
 	    	while(verificador1.equals("n")) {
 	    		S_idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
-	    		if(!S_idade.matches("^[0-9]*$")){
+	    		if(!S_idade.matches("^[0-9]*$") || S_idade.isEmpty()){
 		    		JOptionPane.showMessageDialog(null, "Informe apenas números", "Erro: entrada de dados errado", 1);
-		    		S_idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
 	    		}else {
 		    		verificador1 = "s";
 		    	}
@@ -55,13 +54,12 @@ public class PesquisaGoogle {
 	    	idade = Integer.parseInt(S_idade);
 	    	filme = JOptionPane.showInputDialog(null,"Digite o nome do filme:");
 	    	String S_ano = "";
-	    	while(verificador1.equals("n")) {
-	    		S_idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
-	    		if(!S_idade.matches("^[0-9]*$")){
+	    	while(verificador2.equals("n")) {
+	    		S_ano = JOptionPane.showInputDialog(null,"Digite o ano de lançamento do filme: ");
+	    		if(!S_ano.matches("^[0-9]*$") || S_ano.isEmpty()){
 		    		JOptionPane.showMessageDialog(null, "Informe apenas números", "Erro: entrada de dados errado", 1);
-		    		S_idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
 	    		}else {
-		    		verificador1 = "s";
+		    		verificador2 = "s";
 		    	}
 	    		
 	    	}
@@ -88,6 +86,14 @@ public class PesquisaGoogle {
 			driver.findElement(By.xpath("//input[@class='gLFyf gsfi']")).sendKeys(nome_diretor+" "+nome_filmes+Keys.chord(Keys.ENTER));
 			
 			resultados = driver.findElement(By.xpath("//div[@id='resultStats']")).getText();
+
+			String array[] ;
+			array = resultados.split(" ",4);
+			
+			resultados = array[0]+" "+array[1]+" "+array[2];
+			
+			JOptionPane.showMessageDialog(null, "Filme: "+filmesList.get(i).getFilme()+"\n"+resultados , "Resultados", 1);
+			
 			System.out.println(filmesList.get(i).getFilme());
 			System.out.println(resultados);              
 			driver.findElement(By.xpath("//input[@class='gLFyf gsfi']")).clear();
