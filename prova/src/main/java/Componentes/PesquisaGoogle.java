@@ -37,16 +37,33 @@ public class PesquisaGoogle {
     	
     	while(cad.equals("1")) {
     		
+    		String verificador1 = "n";
+    		String verificador2 = "n";
+    		
 	    	nome = JOptionPane.showInputDialog(null,"Digite o nome do diretor do filme: ");
-	    	String S_idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
-	    	if(S_idade.contains("^[a-Z]")){
-	    		JOptionPane.showInputDialog(null,"Por favor digite apenas números.");
+	    	String S_idade = "";
+	    	while(verificador1.equals("n")) {
+	    		S_idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
+	    		if(!S_idade.matches("^[0-9]*$")){
+		    		JOptionPane.showMessageDialog(null, "Informe apenas números", "Erro: entrada de dados errado", 1);
+		    		S_idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
+	    		}else {
+		    		verificador1 = "s";
+		    	}
+	    		
 	    	}
 	    	idade = Integer.parseInt(S_idade);
 	    	filme = JOptionPane.showInputDialog(null,"Digite o nome do filme:");
-	    	String S_ano = JOptionPane.showInputDialog(null,"Digite o ano de lançamento");
-	    	if(S_ano.contains("^[a-Z]")){
-	    		JOptionPane.showMessageDialog(null, "Por favor digite apenas números.");
+	    	String S_ano = "";
+	    	while(verificador1.equals("n")) {
+	    		S_idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
+	    		if(!S_idade.matches("^[0-9]*$")){
+		    		JOptionPane.showMessageDialog(null, "Informe apenas números", "Erro: entrada de dados errado", 1);
+		    		S_idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
+	    		}else {
+		    		verificador1 = "s";
+		    	}
+	    		
 	    	}
 	    	ano = Integer.parseInt(S_ano);
 	    	
