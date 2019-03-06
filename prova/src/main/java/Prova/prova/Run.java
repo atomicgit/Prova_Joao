@@ -18,7 +18,7 @@ import Componentes.Start;
  */
 public class Run
 {	
-	@Test	
+	@Test
 	public static void main( String[] args ) throws Exception{
 
     	System.setProperty("webdriver.chrome.driver", "C:\\Proton\\ProtonClient\\Drivers\\chromedriver.exe");

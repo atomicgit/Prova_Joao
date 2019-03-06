@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +19,7 @@ import Prova.prova.Diretores;
 import Prova.prova.Filmes;
 
 public class PesquisaGoogle {
+	@Test
 	public static void run(WebDriver driver) throws Exception{
 		
 		String nome="";
@@ -37,9 +39,15 @@ public class PesquisaGoogle {
     		
 	    	nome = JOptionPane.showInputDialog(null,"Digite o nome do diretor do filme: ");
 	    	String S_idade = JOptionPane.showInputDialog(null,"Digite a idade do direitor do filme: ");
+	    	if(S_idade.contains("^[a-Z]")){
+	    		JOptionPane.showInputDialog(null,"Por favor digite apenas números.");
+	    	}
 	    	idade = Integer.parseInt(S_idade);
 	    	filme = JOptionPane.showInputDialog(null,"Digite o nome do filme:");
 	    	String S_ano = JOptionPane.showInputDialog(null,"Digite o ano de lançamento");
+	    	if(S_ano.contains("^[a-Z]")){
+	    		JOptionPane.showMessageDialog(null, "Por favor digite apenas números.");
+	    	}
 	    	ano = Integer.parseInt(S_ano);
 	    	
 	    	Diretores diretor = new Diretores(nome, idade);
@@ -63,7 +71,7 @@ public class PesquisaGoogle {
 			driver.findElement(By.xpath("//input[@class='gLFyf gsfi']")).sendKeys(nome_diretor+" "+nome_filmes+Keys.chord(Keys.ENTER));
 			
 			resultados = driver.findElement(By.xpath("//div[@id='resultStats']")).getText();
-			System.out.println(filmesList.get(0).getFilme());
+			System.out.println(filmesList.get(i).getFilme());
 			System.out.println(resultados);              
 			driver.findElement(By.xpath("//input[@class='gLFyf gsfi']")).clear();
 			
