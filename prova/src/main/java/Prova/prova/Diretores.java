@@ -26,14 +26,6 @@ public class Diretores {
 		this.idade = idade;
 	}
 	
-//	public void listaDiretores(Diretores diretores) {
-//		
-//		ArrayList diretor = new ArrayList();
-//		diretor.add(diretores);
-//		
-//	}
-	
-	
 	
 }
 
